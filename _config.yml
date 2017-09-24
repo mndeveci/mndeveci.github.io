@@ -3,18 +3,18 @@
 # Site wide configuration
 ####################################
 #
-title: Leonids
-email: zourenyuan@gmail.com
-description: A simple and awesome blog theme powered by jekyll.
-url: https://renyuanz.github.io/leonids # the base hostname & protocol for your site
-keywords: ["Programming", "PHP", "Ruby"]
+title: public Oject innovate();
+email: mndeveci@gmail.com
+description: My blog about programming
+url: https://mndeveci.github.io/ # the base hostname & protocol for your site
+keywords: ["Programming", "Java", "Spring", "Hibernate"]
 
 #
 ###################################
 # Jekyll configuration
 ####################################
 #
-timezone:          Europe/Paris
+timezone:          Europe/Amsterdam
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
@@ -33,13 +33,13 @@ kramdown:
 ####################################
 #
 owner:
-  name: Leonids
+  name: Mehmet Nuri Deveci
   avatar: leonids-logo.png
-  job: "PHP & Ruby Developer"
+  job: "Senior Software Engineer"
   bio: "A backend developer who loves design awesome things. Working for RendezvousCheznous atm in Marseille, France."
-  email: zourenyuan@gmail.com
-  disqus-shortname: renyuanzblog
-  twitter: renyuan814 #username
+  email: mndeveci@gmail.com
+  disqus-shortname:
+  twitter: mndeveci #username
   facebook: #username
   google:
     plus: #username
