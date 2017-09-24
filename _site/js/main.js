@@ -6,20 +6,21 @@ $(document).ready(function() {
 
 	//	HISTORICIZE AND AJAXIFY OUR SITE
 	var siteUrl = 'http://'+(document.location.hostname||document.location.host);
+	var siteUrlSecure = 'https://'+(document.location.hostname||document.location.host);
 
 	//	Catch all internally-focused links and push a new state.
 	//	Note: External links will not be affected by this behavior.
-	$(document).on("click", 'a[href^="/"],a[href^="'+siteUrl+'"]', function(e) {
+	$(document).on("click", 'a[href^="/"],a[href^="'+siteUrl+'"],a[href^="'+siteUrlSecure+'"]', function(e) {
 		e.preventDefault();
 		History.pushState({}, "", this.pathname);
 	});
 
-	History.Adapter.bind(window, 'statechange', function(){
-		$('.content').fadeOut(100, function () {
+	History.Adapter.bind(window, 'statechange', function(e){
+		$('#content').fadeOut(100, function (e) {
 			var State = History.getState();
 			$.get(State.url, function(data){	// Use AJAX to get the new content.
 				document.title = data.match(/<title>(.*?)<\/title>/)[1];
-				$('.content').html($(data).find('.content')).fadeIn(100); 	// Pull the post we want out of the .content class.
+				$('#content').html($(data).find('#content')).fadeIn(100); 	// Pull the post we want out of the .content class.
 				// If you change the class of the post container,
 				// you must change it here!!!
 
