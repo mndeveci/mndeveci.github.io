@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 	//	Catch all internally-focused links and push a new state.
 	//	Note: External links will not be affected by this behavior.
-	$(document).delegate('a[href^="/"],a[href^="'+siteUrl+'"]', "click", function(e) {
+	$(document).on("click", 'a[href^="/"],a[href^="'+siteUrl+'"]', function(e) {
 		e.preventDefault();
 		History.pushState({}, "", this.pathname);
 	});
