@@ -3,7 +3,7 @@
 # Site wide configuration
 ####################################
 #
-title: public Oject innovate();
+title: public Object innovate();
 email: mndeveci@gmail.com
 description: My blog about programming
 url: https://mndeveci.github.io/ # the base hostname & protocol for your site
@@ -34,10 +34,10 @@ kramdown:
 #
 owner:
   name: Mehmet Nuri Deveci
-  avatar: leonids-logo.png
+  avatar: avatar-test.png
   job: "Senior Software Engineer"
-  bio: "A backend developer who loves design awesome things. Working for RendezvousCheznous atm in Marseille, France."
-  email: mndeveci@gmail.com
+  bio: "A Java Developer who loves learning new stuff. Working for Powerhouse in Amsterdam, Netherlands"
+  email: #mndeveci@gmail.com
   disqus-shortname:
   twitter: mndeveci #username
   facebook: #username
@@ -48,9 +48,9 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: renyuanz #username
+  github: mndeveci #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: renyuan-zou-69b7038a #username
+  linkedin: mndeveci #username
   xing: #username
   instagram: #username
   lastfm: #username
@@ -65,3 +65,4 @@ owner:
   flickr: #username
   codepen: #username
   telegram: #username
+  500px: mndeveci #username

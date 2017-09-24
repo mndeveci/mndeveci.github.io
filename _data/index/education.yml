@@ -1,8 +1,9 @@
-- name: Massachusets Instutite of Technology
-  link: http://web.mit.edu/
-  date: 2011 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
-  descr: <br> (expected graduation in 2019)
+- name: Istanbul University
+  link: http://isletmeiktisadi.istanbul.edu.tr/en/
+  date: 2008 - 2011
+  descr: Master, Master of Business Administration
 
-- name: Harvard
-  link: http://www.harvard.edu/
-  date: 2007 - 2011
+- name: Istanbul University
+  link: http://muhendislik.istanbul.edu.tr/en/
+  date: 2004 - 2008
+  descr: Bachelor, Computer Engineering

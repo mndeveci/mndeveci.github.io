@@ -73,7 +73,7 @@
 /*
  * Global Variables
  */
-@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Source+Sans+Pro:600,400,400italic|Roboto+Mono&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Catamaran:600,400,400italic|Noto+Serif:600,400,400italic|Source+Sans+Pro:600,400,400italic|Roboto+Mono&subset=latin,latin-ext);
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -533,20 +533,93 @@ a {
   transition: all 0.1s ease; }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
   text-align: center;
-  padding: 3em 0; }
+  height: 60px; }
   footer .heart-icon {
     color: #f83e4b;
     text-shadow: 0 0 5px #fff, 0 0 10px #f83e4b; }
 
+.footer-svg {
+  height: 20px;
+  background-color: slategray;
+  display: inline;
+  vertical-align: middle;
+  padding: 2px;
+  border-radius: 2px; }
+
 .related-articles {
   margin-top: 2em; }
   .related-articles h4 {
-    font-family: "Noto Serif", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: "Catamaran", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .related-articles ul {
     margin: 0;
     padding: 0;
     list-style: none; }
+
+.cover {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  z-index: 100; }
+
+@media only screen and (max-width: 992px) {
+  .cover {
+    width: 100%;
+    height: 30%;
+    min-height: 300px; } }
+.cover-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.3);
+  background-color: #232323;
+  background-image: url("https://www.mndeveci.com/content/images/2015/12/IMG_0633.jpg"); }
+
+.cover-container {
+  position: absolute;
+  bottom: 0;
+  padding: 50px 10% 10%;
+  width: 100%;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+
+@media only screen and (max-width: 992px) {
+  .cover-container {
+    text-align: center;
+    padding: 0 15px; } }
+.cover-logo img {
+  border: 3px solid #fff;
+  border-radius: 50%;
+  border-radius: 50%;
+  max-height: 100px;
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  -webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3), inset 0 0 40px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3), inset 0 0 40px 2px rgba(0, 0, 0, 0.3);
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.cover-logo:hover img, .cover-logo:focus img {
+  opacity: 0.85; }
+
+.cover-title {
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 12px; }
+
+.cover-description {
+  font-size: 16px;
+  line-height: 1.2; }
 
 /**
   * Helpers
@@ -1036,7 +1109,7 @@ footer {
    ========================================================================== */
 html {
   line-height: 1.5;
-  font-family: "Noto Serif", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Catamaran", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
   -webkit-font-smoothing: antialiased;
@@ -1118,10 +1191,9 @@ p {
    ========================================================================== */
 .btn {
   display: inline-block;
-  margin-bottom: 20px;
-  padding: 8px 20px;
+  padding: 2px 8px;
   font-size: 0.875em;
-  font-family: "Noto Serif", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Catamaran", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   background-color: #2561b9;
   color: #fff;
@@ -1471,7 +1543,7 @@ pre code {
     float: none; }
   .cover-card .author_name {
     display: block;
-    color: #F36170;
+    color: #000000;
     font-size: 1.75em;
     text-transform: lowercase; }
   .cover-card .author_job {
@@ -1486,7 +1558,6 @@ pre code {
     display: block; }
   @media only screen and (min-width: 992px) {
     .cover-card {
-      text-align: right;
       margin: 0 auto;
       padding: 0 0px 80px; } }
 
