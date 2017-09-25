@@ -5,6 +5,8 @@ date:   2017-03-17 20:07:19
 categories: [Programming]
 tags: [java, spring, hibernate, jpa, jasypt]
 comments: true
+image: 
+    feature: https://www.mndeveci.com/content/images/2017/03/21133466726_39806aeb50_b.jpg
 ---
 In this post I am going to give a quick demo about how [Jasypt](http://www.jasypt.org/) (Encryption framework for Java) can be used with Hibernate.
 

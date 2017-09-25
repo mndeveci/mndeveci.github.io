@@ -126,6 +126,14 @@ footer {
 	color: $danger;
 	text-shadow: 0 0 5px $white, 0 0 10px $danger;
   }
+
+  @media(max-width: $medium-screen) {
+	visibility: hidden;
+  }
+
+  @media(min-width: $large-screen) {
+	visibility: visible;
+  }
 }
 
 .footer-svg {
@@ -148,3 +156,5 @@ footer {
 	list-style: none;
   }
 }
+
+

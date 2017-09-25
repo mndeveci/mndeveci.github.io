@@ -1,5 +1,10 @@
 /* LAYOUT CSS */
 .cover {
+
+  background-image: url('https://www.mndeveci.com/content/images/2015/12/IMG_0633.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
   background-color: $background-color;
   position: fixed;
   text-align: center;
@@ -7,34 +12,50 @@
   min-height: 400px;
   padding: 30px 15px 20px;
   z-index: 1;
+
+  text-shadow: 1px 1px 1px #000;
+
   @include media-query($small-screen) {
-    background-position: center;
+    background-position: right;
     padding: 30px;
   }
   @include media-query($medium-screen) {
     height: 100vh;
     position: initial;
     width: 100%;
+    background-position-x: -600px;
+  }
+
+  hr {
+    background-color: #fff;
   }
 }
+
 .cover-card {
-  color: $text-color;
+  color: #eae8e8;
   padding: 0 30px;
+
+
+
   .avatar {
     border-radius: 50%;
     width: 100px;
     height: 100px;
     float: none;
+
+    border: 3px solid #fff;
+    -webkit-box-shadow: 0 0 3px 3px rgba(0,0,0,.3), inset 0 0 40px 2px rgba(0,0,0,.3);
+    box-shadow: 0 0 3px 3px rgba(0,0,0,.3), inset 0 0 40px 2px rgba(0,0,0,.3);
   }
   .author_name {
     display: block;
-    color: #000000;
+    color: #fff;
     font-size: 1.75em;
     text-transform: lowercase;
   }
   .author_job {
     display: block;
-    color: $secondary;
+    color: #fff;
     font-size: 0.8em;
     font-weight: 700;
     text-transform: uppercase;
@@ -60,7 +81,7 @@
       display: inline-block;
       margin-left: 1em;
       a.social-link-item {
-        color: $secondary;
+        color: #fff;
         &:hover,
         &:focus {
           color: lighten($secondary, 14%);
@@ -77,11 +98,12 @@
     display: inline-block;
     *display: inline;
     zoom: 1;
+    padding-left: 10px;
     & a {
       margin-top: 1em;
       text-transform: lowercase;
       font-size: 85%;
-      color: $secondary;
+      color: #fff;
       &:hover,
       &:focus {
         color: lighten($secondary, 14%);

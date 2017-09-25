@@ -3,31 +3,38 @@ layout: default
 ---
 
 {% if page.image.feature %}
-<div class="post-image-feature">
-  <img class="feature-image" src=
   {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
-  "{{ page.image.feature }}"
+    {% assign imagelink = page.image.feature %}
   {% else %}
-  "{{ site.url }}/img/{{ page.image.feature }}"
+    {% assign imagelink = site.url'/img/'page.image.feature %}
   {% endif %}
-  alt="{{ page.title }} feature image">
-
-  {% if page.image.credit %}
-  <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-</div><!-- /.image-wrap -->
 {% endif %}
 
 
 <div id="post">
   <header class="post-header">
-    <h1 title="{{ page.title }}">{{ page.title }}</h1>
+    <h1 title="{{ page.title }}">
+      <i class="fa fa-paragraph" aria-hidden="true"></i>
+      {{ page.title }}
+    </h1>
+
+    {% if page.image.feature %}
+    <div class="post-image-feature" style="background-image: url('{{ imagelink }}'); background-size: cover; background-position-y: center;">
+      <img class="feature-image" src="{{imagelink}}" alt="{{ page.title }} feature image" style="visibility: hidden">
+
+      {% if page.image.credit %}
+      <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+      {% endif %}
+    </div><!-- /.image-wrap -->
+    {% endif %}
+
     <span class="post-meta">
       <span class="post-date">
         {{ page.date | date: "%-d %b %Y" | upcase }}
       </span>
        •
       {% include read_time.html %}
+      {% include tags.html %}
     </span>
 
   </header>
