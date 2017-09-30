@@ -8,6 +8,7 @@ email: mndeveci@gmail.com
 description: My blog about programming
 url: https://mndeveci.github.io/ # the base hostname & protocol for your site
 keywords: ["Programming", "Java", "Spring", "Hibernate"]
+excerpt_separator: <!--more-->
 
 #
 ###################################

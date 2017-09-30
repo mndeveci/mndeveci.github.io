@@ -1,14 +1,16 @@
 ---
 layout: post
-title:  "JPA (Hibernate) Database Auditing"
-date:   2016-09-16 18:34:12
+title: "JPA (Hibernate) Database Auditing"
+date: 2016.09.22 20:11:00
 categories: [Programming]
-tags: [java, spring, hibernate, jpa, hibernate-envers]
+tags: [hibernate, jpa, hibernate-envers]
 comments: true
 image: 
-    feature: https://www.mndeveci.com/content/images/2016/11/clock-1274699_1280.jpg
+    feature: clock-1274699_1280.jpg
 ---
 For developers, it is crucial to keep the history of the codes in a project. Such tools are named as `Version Control Systems` like Git, CVS, SVN etc. You can find all the changes with their descriptions and authors. Why don't a business unit need such a feature like this. They may need a revision of a database entity in a defined time period.
+
+<!--more-->
 
 If you are using JPA (Hibernate) as your entity framework, then you got the solution with [**Hiberante Envers** ](http://docs.jboss.org/envers/docs/). Hibernate Envers enables database record revisions based on the tables. You just need to annotate the entity class with `@Audited` annotation and you are good to go.
 

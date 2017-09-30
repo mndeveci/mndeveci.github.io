@@ -1,14 +1,17 @@
 ---
 layout: post
-title:  "Data Encryption with JPA/Hibernate and Jasypt"
-date:   2017-03-17 20:07:19
+title: "Data Encryption with JPA (Hibernate) and Jasypt"
+date: 2017.03.15 18:09:02
 categories: [Programming]
-tags: [java, spring, hibernate, jpa, jasypt]
+tags: [hibernate, spring-boot, jasypt, encryption]
 comments: true
 image: 
-    feature: https://www.mndeveci.com/content/images/2017/03/21133466726_39806aeb50_b.jpg
+  feature: 21133466726_39806aeb50_b.jpg
 ---
+
 In this post I am going to give a quick demo about how [Jasypt](http://www.jasypt.org/) (Encryption framework for Java) can be used with Hibernate.
+
+<!--more-->
 
 I am going to use my latest Spring Boot & AngularJS project which can be found at [github](https://github.com/mndeveci/spring-boot-angularjs-project-3-final).
 
@@ -18,8 +21,7 @@ To begin coding, I cloned the repository above and copy `pom.xml` file and `src`
 
 I am going to add the `Jasypt` dependencies at the `pom.xml` file.
 
-
-```xml
+```
 ...
 
 <properties>

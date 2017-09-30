@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  "Spring Boot & AngularJS Projesi - CRUD Ekranları"
-date:   2016-07-16 00:24:45
+title: "Spring Boot & AngularJS Projesi - CRUD Ekranları"
+date: 2016.07.10 22:24:33
 categories: [Programming]
-tags: [java, spring, spring-boot, angularjs, bootstrap, hibernate]
+tags: [java, spring, hibernate, angularjs, spring-boot, bootstrap]
 comments: true
 ---
-
 Merhabalar,
 
 Önceki yazılarımda ilk girişimlerini yaptığımız Spring Boot & AngularJS Projesi'nde son adım olarak, veritabanında kaydedeceğimiz nesnelerin CRUD(Create/Read/Update/Delete) ekranlarını gerçekleştireceğiz.
+
+<!--more-->
 
 Önceki yazılara ulaşmak için;
 
