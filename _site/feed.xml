@@ -5,8 +5,8 @@
     <description>My blog about programming</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Nov 2017 00:39:12 +0100</pubDate>
-    <lastBuildDate>Sun, 19 Nov 2017 00:39:12 +0100</lastBuildDate>
+    <pubDate>Sun, 19 Nov 2017 00:50:00 +0100</pubDate>
+    <lastBuildDate>Sun, 19 Nov 2017 00:50:00 +0100</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -763,19 +763,6 @@ As you can see, Koltin also have some metods for easily creating collections. Fo
         <category>jpa</category>
         
         <category>hibernate-envers</category>
-        
-        
-        <category>Programming</category>
-        
-      </item>
-    
-      <item>
-        <title>@IdClass ve @EmbeddedId arasındaki farkları anlatan entry yaz</title>
-        <description>
-</description>
-        <pubDate>Thu, 04 Aug 2016 04:23:00 +0200</pubDate>
-        <link>http://localhost:4000/idclass-ve-embeddedid-arasindaki-farklari-anlatan-entry-yaz</link>
-        <guid isPermaLink="true">http://localhost:4000/idclass-ve-embeddedid-arasindaki-farklari-anlatan-entry-yaz</guid>
         
         
         <category>Programming</category>
@@ -1917,32 +1904,6 @@ As you can see, Koltin also have some metods for easily creating collections. Fo
       </item>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 18 Aug 2015 17:07:19 +0200</pubDate>
-        <link>http://localhost:4000/welcome-to-jekyll</link>
-        <guid isPermaLink="true">http://localhost:4000/welcome-to-jekyll</guid>
-        
-        
-      </item>
-    
-      <item>
         <title>Oracle PLSQL Statik List'den Select</title>
         <description>&lt;p&gt;Excel veya benzer bir ortamdan aldığınız statik bir listinize SELECT çalıştırabilmek için;&lt;/p&gt;
 
@@ -1958,6 +1919,60 @@ As you can see, Koltin also have some metods for easily creating collections. Fo
         <category>plsql</category>
         
         <category>select</category>
+        
+        
+        <category>Programming</category>
+        
+      </item>
+    
+      <item>
+        <title>Oracle Apex PLSQL'den Mesaj Verme</title>
+        <description>&lt;p&gt;Oracle Apex’de PLSQL işlemi sonrasında kullanıcıya mesaj vermek için:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-language-sql&quot;&gt;begin  
+	IF :P1_COMPUTER like 'PC%'  THEN  
+		INSERT INTO...;  
+		COMMIT;  
+		apex_application.g_print_success_message := '&amp;lt;span style=&quot;color:green&quot;&amp;gt;Computer created&amp;lt;/span&amp;gt;';  
+	ELSE  
+		apex_application.g_print_success_message := '&amp;lt;span style=&quot;color:red&quot;&amp;gt;No valid computer name&amp;lt;/span&amp;gt;';  
+	END IF;  
+END;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Fri, 31 Oct 2014 01:56:00 +0100</pubDate>
+        <link>http://localhost:4000/oracle-apex-plsqlden-mesaj-verme</link>
+        <guid isPermaLink="true">http://localhost:4000/oracle-apex-plsqlden-mesaj-verme</guid>
+        
+        <category>oracle</category>
+        
+        <category>apex</category>
+        
+        <category>plsql</category>
+        
+        
+        <category>Programming</category>
+        
+      </item>
+    
+      <item>
+        <title>Oracle Apex Evet/Hayır Diyaloğu</title>
+        <description>&lt;p&gt;Oracle Apex’de, bir linkin altına Evet/Hayır sorusu sormak için:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-language-javascript&quot;&gt;javascript:apex.confirm('Sormak istediğiniz soru?', {set:{&quot;ITEM_1&quot;:&quot;VAL_1&quot;}});
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Fri, 31 Oct 2014 01:52:00 +0100</pubDate>
+        <link>http://localhost:4000/oracle-apex-evet-hayir-diyalogu</link>
+        <guid isPermaLink="true">http://localhost:4000/oracle-apex-evet-hayir-diyalogu</guid>
+        
+        <category>javascript</category>
+        
+        <category>oracle</category>
+        
+        <category>apex</category>
+        
+        <category>plsql</category>
         
         
         <category>Programming</category>

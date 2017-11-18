@@ -5,6 +5,8 @@ date: 2017.09.30 20:23:00
 categories: [Programming]
 tags: []
 comments: true
+image: 
+  feature: kotlin_800x320.png
 ---
 
 A couple of years ago [JetBrains announced](https://blog.jetbrains.com/kotlin/2011/07/hello-world-2/) that they are working on a new JVM language for their internal works. And later on they announce this new language, Kotlin. Ever since then the language got more famous, and got the attention of Google. And now, Google officially supports in Android developments.
