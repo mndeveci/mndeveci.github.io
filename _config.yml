@@ -6,7 +6,7 @@
 title: public Object innovate();
 email: mndeveci@gmail.com
 description: My blog about programming
-url: https://mndeveci.github.io/ # the base hostname & protocol for your site
+url: https://www.mndeveci.com/ # the base hostname & protocol for your site
 keywords: ["Programming", "Java", "Spring", "Hibernate"]
 excerpt_separator: <!--more-->
 
@@ -36,7 +36,7 @@ kramdown:
 owner:
   name: Mehmet Nuri Deveci
   avatar: avatar-test.png
-  job: "Senior Software Engineer"
+  job: "Software Enthusiast"
   bio: "A Java Developer who loves learning new stuff. Working for Powerhouse in Amsterdam, Netherlands"
   email: #mndeveci@gmail.com
   disqus-shortname:
@@ -44,7 +44,7 @@ owner:
   facebook: #username
   google:
     plus: #username
-    analytics: UA-62251910-2
+    analytics: UA-16633713-6
     verify:
     ad-client:
     ad-slot:
