@@ -11,13 +11,4 @@
   ga('send', 'pageview');
 </script>
 
-<!-- Update social media images -->
-<script>
-    $(document).ready(function(){
-        var postImage = $('#mnd-post-image').attr('src');
-        $('meta[name=og:image]').attr('content', postImage);
-        $('meta[name=twitter:image]').attr('content', postImage);
-    });
-</script>
-
 {% endif %}

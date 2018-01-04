@@ -10,6 +10,14 @@
   {% capture description %}{{ site.description }}{% endcapture %}
 {% endif %}
 
+{% if page.image.feature %}
+  {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
+    {% assign imagelink = page.image.feature %}
+  {% else %}
+    {% assign imagelink = site.url | append: '/img/post/' | append: page.image.feature %}
+  {% endif %}
+{% endif %}
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,14 +31,14 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
-  <meta name="twitter:image" content="{{ site.url }}/img/leonids-logo.png">
+  <meta name="twitter:image" content="{{ imagelink }}">
 
   <!-- Open Graph Tags -->
   <meta property="og:type" content="blog">
   <meta property="og:url" content="{{ site.url }}">
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
-  <meta property="og:image" content="{{ site.url }}/img/leonids-logo.png">
+  <meta property="og:image" content="{{ imagelink }}">
   <title>{{ title }}</title>
 
   <!-- CSS files -->
