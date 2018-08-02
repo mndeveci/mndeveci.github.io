@@ -6,7 +6,7 @@ layout: default
   {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
     {% assign imagelink = page.image.feature %}
   {% else %}
-    {% assign imagelink = site.url | append: '/img/post/' | append: page.image.feature %}
+    {% assign imagelink = site.url | append: 'img/post/' | append: page.image.feature %}
   {% endif %}
 {% endif %}
 
