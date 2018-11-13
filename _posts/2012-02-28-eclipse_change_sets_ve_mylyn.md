@@ -18,18 +18,18 @@ comments: true
 
 Öncelikle change set, size proje domaini altında alt bir domain oluşturarak, yaptığınız değişiklikleri, açtığınız dosyaları o domaine bağlayıp, siz değişen dosyaları commit etmek istediğinizde, size değişik change set'ler altında onlara ait dosyaları göstererek, az önce bahsettiğimiz karışıklıktan kurtarıp, sizi daha düzenli ve hatasız çalışma imkanı sunuyor. Tüm bunlara bir de issue tracking sisteminizi entegre ettiğinizde, çalışmanıza plan program uygulayıp, daha sonra geri dönmek istediğinizde, ya da yapılan değişikliklerin ne ile ilgili olduğunu bulmak istediğinizde, size daha planlı ve kayıt tutulan bir yapı sağlıyor. 
 
-[![](/img/post/mylyn_connector.jpg)](/img/post/mylyn_connector.jpg) 
+[![image]({{ site.baseurl }}/img/post/mylyn_connector.jpg){: .lazyload}] 
 Öncelikle Mylyn'i kullandığınız issue tracking sistemine bağlıyorsunuz. Bunu yapmak için Mylyn'in Task Repository penceresinden yeni Repository ekleyerek yapabilirsiniz. Burada eklemek istediğiniz başka connector'lar var ise, Install More Connectors butonuna basarak kullandığınız sisteme (ör: Mantis BT) uygun bir connector yükleyebilirsiniz. Size ait connector'ü kurup issue repository'ye bağlanabilirsiniz. 
 
 Gerekli ayarları yaptıktan sonra, issue repository'deki kayıtları görebilir, yeni issue'lar ekleyebilir, var olanlardan bazılarını üzerinize alabilir ya da kapatabilirsiniz. Kısacası Mylyn bir hata kaydının tüm süreçlerinde size yardım etmektedir. 
 
 Şimdi gelelim çalışacağınız iş üzerinde Change Set'leri kullanmaya başlamaya. Mylyn'den yeni bir kayıt girilebilir ya da var olan kayıtlardan biri seçilebilir. Kayda sağ tıkladığınızda çıkan menude Activate derseniz, şu an aktif olarak o kayıt üzerinde çalışmış olduğunuzu belirtmiş olursunuz. Bu neler sağlar; öncelikle issue tracking sisteminizde, çalışılan zamanı tutma özelliği mevcut ise, sizin o iş üzerinizde harcadığınız zamanı ölçemeye başlar. Kaydı kendinize assing ederseniz, o hata kaydını size atamış olur. Aynı zamanda farkında olmadan, bir Change Set oluşturup, yaptığınız değişiklikleri o Change Set üzerinden yönetebilme imkanı sunacaktır sizlere. İlgili kaydı Activate ettiğinizden bu yana yaptığınız tüm değişiklikler o kayıt üzerinden gidecektir. 
 
-[![](/img/post/mylyn_change-set.jpg)](/img/post/mylyn_change-set.jpg) 
+[![image]({{ site.baseurl }}/img/post/mylyn_change-set.jpg){: .lazyload}]
 
 Şimdi Team Synchronizing perspektifine geçip, yukarıdaki menüden All Models yerine Change Set seçerseniz, yaptığınız değişiklikleri, Activate etmiş olduğunuz kayıt ismiyle gösterecektir (Burada başlık olarak nasıl gözükmesini istiyorsanız, ayarlardan değiştirebilirsiniz). Eğer bu perspektifte commit yaparsanız, commit comment olarak da bu Mylyn'de oluşturduğunuz kaydın başlığı, yani Change Set adı ile commit edecektir. Yine karşı tarafta bu commitleri alacak olanlara da, yine bu başlık bilgisi ve commit eden kullanıcı bilgileri ile ulaşacaktır. 
 
-[![](/img/post/mylyn_overridefadednohighlight.png)](/img/post/mylyn_overridefadednohighlight.png) 
+[![image]({{ site.baseurl }}/img/post/mylyn_overridefadednohighlight.png){: .lazyload}] 
 
 Son olarak da ilk başta bahsetmiş olduğumuz soruna geri dönersek, aktif olarak bir issue üzerinde çalışırken, farklı bir işe başlamamız gerekirse, Mylyn'den yeni bir issue seçerek onu aktive ettiğimizde, bundan sonra yapacağımız değişiklikler bu yeni issue üzerinden gidecektir. Bu sayede Team Synchronizing  perspektifindeki ağaçta iki farklı dal olup, yapılan değişiklikleri ağacın dalları altında görebilirisiniz. Son çalıştığınız issue üzerine sağ tıklayıp commit ederseniz de sadece ona ait dosyaları CVS'e göndermiş olacaksınız. İşte bu kadar basit. 
 
