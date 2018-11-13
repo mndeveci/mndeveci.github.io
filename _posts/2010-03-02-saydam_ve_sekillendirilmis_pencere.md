@@ -76,5 +76,5 @@ public class TranslucentTest implements MouseMotionListener {
 }
 ```
 
-[![]({{ site.baseurl }}/img/post/translucent.png){: .lazyload}]
+![]({{ site.baseurl }}/img/post/translucent.png){: .lazyload}
 Örnek ekran:
