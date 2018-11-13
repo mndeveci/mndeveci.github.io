@@ -10,26 +10,22 @@ Java da JFrame i kod ile tam ekrana getirmek için.
 
 <!--more-->
 
-<pre class="prettyprint"> 
+```java
 import java.awt.*; 
 import javax.swing.*; 
 
-public class test extends JFrame 
-{ 
-public test() 
-{ 
-GraphicsEnvironment env = 
-GraphicsEnvironment.getLocalGraphicsEnvironment(); 
-this.setMaximizedBounds(env.getMaximumWindowBounds()); 
-this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH); 
-} 
+public class Test extends JFrame {
+    public Test() {
+        GraphicsEnvironment env =
+        GraphicsEnvironment.getLocalGraphicsEnvironment();
+        this.setMaximizedBounds(env.getMaximumWindowBounds());
+        this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+    }
 
-public static void main(String[] args) 
-{ 
-JFrame.setDefaultLookAndFeelDecorated(true); 
-
-test t = new test(); 
-t.setVisible(true); 
+    public static void main(String[] args) {
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        Test t = new Test();
+        t.setVisible(true);
+    }
 } 
-} 
-</pre>
+```

@@ -14,9 +14,11 @@ Birincisi ekleyerek bunu yapabilirsiniz. Bu sayede kullanıcının herhangi bir 
 
 İkinci çözüm olarak da, ilgili kontrole tuş aksiyonları _bind_ edebilirsiniz. Bunun için kontrolün _input map_ nesnesinebir klavye aksiyonunu bir anahtar ile kaydedip, _action map_ nesnesine de bu anahtar ile aksiyon ekleyip gerçekleştirebilirsiniz. Örnek olarak; 
 
-<pre class="prettyprint">component.getInputMap().put(KeyStroke.getKeyStroke("F2"), "doSomething"); 
+```java
+component.getInputMap().put(KeyStroke.getKeyStroke("F2"), "doSomething");
 component.getActionMap().put("doSomething", anAction); 
-//anAction implements javax.swing.Action</pre>
+//anAction implements javax.swing.Action
+```
 
 Bu çözüm, panel ya da diyalog gibi ekranlarda kullanılarak kullanıcının herhangi bir girdi giremeyeceği nesneler üzerinde etkili olur. Kullanıcıların klavye ile girdi girebileceği (JTextField ya da JTextArea gibi) nesnelerde birinci çözüm daha efektif olarak kullanılabilir. 
 

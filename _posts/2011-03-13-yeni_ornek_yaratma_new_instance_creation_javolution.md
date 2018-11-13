@@ -10,43 +10,40 @@ comments: true
 
 <!--more-->
 
-<pre class="prettyprint">public enum MyEnum { 
-
-RIGHT, LEFT, TOP, BOTTOM 
-}</pre>
+```java
+public enum MyEnum {
+    RIGHT, LEFT, TOP, BOTTOM
+}
+```
 
 _Javolution_ bu sınıfa uygun olarak gerçeklenemez. Çünkü _initialize_ etmeniz gerek ve eğer siz _RIGHT_ olarak _initialize_ ettiyseniz, onu daha sonradan _LEFT_ olarak atayamazsınız. Çünkü _read_ metoduna zaten _initialize_ edilmiş nesne gelecektir. Yani kurgu tamamen sınıfın boş _constructor_ ile oluşturulup daha sonra içerideki elemanların sırayla oluşturulmasından geçer. 
 
 Ancak bunu kırmanın bir yolu mevcut. Şöyle ki; hali hazırda _XMLFormat_ sınıfını yazdıktan sonra, _read_ ve _write_ olmak üzere iki adet _abstract_ metodu yazmanız gerek. Ama _XMLFormat_ sınıfının içerisinde bir metot daha mevcut. O da _newInstance_ metodu; 
 
-<pre class="prettyprint">public T newInstance(Class <t>cls, InputElement xml) throws XMLStreamException;</t></pre>
+```java
+public T newInstance(Class <T>cls, InputElement xml) throws XMLStreamException;
+```
 
 Bu metot'da, o boş _constructor_ ile nesne oluşturan kısım. Ancak dikkat edeceğiniz gibi bu metoda da _InputElement_ nesnesi gelmektedir. Yani XML'e ait olan verileri bu metot içerisinde de okuyabiliriz. Örnek vermek gerekirse yukarıdaki _enum_ sınıfı için; 
 
-<pre class="prettyprint">public enum MyEnum { 
+```java
+public enum MyEnum {
 
-RIGHT, LEFT, TOP, BOTTOM; 
+    RIGHT, LEFT, TOP, BOTTOM;
 
-static final XMLFormat XML = new XMLFormat(MyEnum.class) { 
+    static final XMLFormat XML = new XMLFormat(MyEnum.class) {
+        public MyEnum newInstance(Class<MyEnum> cls, InputElement xml) throws XMLStreamException {
+            return MyEnum.valueOf(xml.getAttribute("toStr", ""));
+        }
 
-public MyEnum newInstance(Class <myenum>cls, InputElement xml) throws XMLStreamException { 
+        public void write(MyEnum myEnum, OutputElement xml) throws XMLStreamException {
+            xml.setAttribute("toStr", myEnum.toString());
+        }
 
-return MyEnum.valueOf(xml.getAttribute("toStr", "")); 
+        public void read(InputElement xml, Point point) throws XMLStreamException { }
+    };
 
-} 
-
-public void write(MyEnum myEnum, OutputElement xml) throws XMLStreamException { 
-
-xml.setAttribute("toStr", myEnum.toString()); 
-
-} 
-
-public void read(InputElement xml, Point point) throws XMLStreamException { 
-
-} 
-
-}; 
-
-}</myenum></pre>
+}
+```
 
 Yukarıda da görüleceği üzere, sınıfn yeni örneğini kendimiz yaratarak boş _constructor_ ile oluşturulmasının önüne geçebiliyoruz.

@@ -44,21 +44,21 @@ Bu süreci optimum sürede ve minimum eforla halletmek için _Apache Ant_ bize y
 
 Öncelikle _Ant'_i indirip bazı ön hazırlıklarını halletmemiz gerekmektedir. http://ant.apache.org/ sitesinden _binary_ dağıtımı indirebilirsiniz. Daha sonra indirdiğiniz bu dosyayı bir yerlere açmanız gerekmektedir. Dosyaları açtıktan sonra sistem Path değişkenine aşağıdaki gibi Ant klasörü altında bin klasörünü eklemeniz gerekmektedir. 
 
-<pre lang="java"> 
+```
 C:\Program Files\Apache Software Foundation\apache-ant-1.8.2\bin 
-</pre>
+```
 
 Bunlara ek olarak ANT_HOME değişkeni belirlemeniz gerekmektedir. 
 
-<pre lang="java"> 
+```
 C:\Program Files\Apache Software Foundation\apache-ant-1.8.2 
-</pre>
+```
 
 Son olarak da eğer belirtilmemişse JAVA_HOME değişkenini belirlemeniz gerekmektedir. 
 
-<pre lang="java"> 
+```
 C:\Program Files\Java\jdk1.6.0_14 
-</pre>
+```
 
 Hepsini bitirdikten sonra konsola 
 

@@ -10,20 +10,18 @@ comments: true
 
 Mac OS için; 
 
-<pre lang="java"> 
+```
 open filename.pdf 
-</pre>
+```
 
 Microsoft Windows için; 
 
-<pre lang="java"> 
+```
 start filename.pdf 
-</pre>
+```
 
 Linux dağıtımları için; 
 
-<pre lang="java"> 
+```
 xdg-open filename.pdf 
-</pre>
-
-[www.stackoverflow.com](www.stackoverflow.com)
+```

@@ -18,11 +18,13 @@ SAX ise DOM gibi çalışmaz. SAX parser ve de-parse işlemlerini sizin yazmanı
 
 StAX ise geçenlerde, daha hızlı XML parse'ı araştırıken, karşıma çıkan bir yenilik oldu. Aslında sonuna kadar okuyamamla beraber, SAX'a çok benzer bir yapıya sahip olduğunu öğrendim. Asıl önemli olan ise StAX değil onu gördüğüm yer olan _javolution_ kütüphanesi idi. 
 
-sitesinde de anlatıldığı üzere bahsettikleri şey java.util kütüphanesini baştan yaratmak olduğu. Daha hızlı ve daha efektif çalışan ve util paketiyle eşdeğer bir paket hazırladıklarını anlatıyorlar. Bunların içinden en önemlisi, benim işime en yarayacak olanı, xml paketiydi. XML _parse_ ve _de-parse_ işlemlerini çok basit ve çok etkili bir hale getirmekte _javolution_. 
+sitesinde de anlatıldığı üzere bahsettikleri şey java.util kütüphanesini baştan yaratmak olduğu. Daha hızlı ve daha efektif çalışan ve util paketiyle eşdeğer bir paket hazırladıklarını anlatıyorlar. Bunların içinden en önemlisi, benim işime en yarayacak olanı, xml paketiydi. XML _parse_ ve _serialization_ işlemlerini çok basit ve çok etkili bir hale getirmekte _javolution_.
 
 Bunu nasıl yaptığına gelirsek, öncelikle XML'e dönüştürülebilecek nesnelerimizi XMLSerializable interface'inden türetiyoruz. Java'da bulunan Serializable'a benzer bir mantığı var. Daha sonra ise Sınıfımızın içine 
 
-<pre class="prettyprint">XMLFormat XML = new XMLFormat(MyClass.class){};</pre>
+```java
+XMLFormat XML = new XMLFormat(MyClass.class){};
+```
 
 nesnesini tanımlıyoruz. İşte asıl işlem bu XMLFormat instance'ında yatıyor. Bu inner class'ın içine yazacağımzı, yazmamız gereken, read ve write fonksiyonları bu nesnenin otomatik olarak XML'e yazılıp daha sonra ise XML'den okunmasını sağlamaktadır. Geri planda bu işi yapan kısım javolution paketinin içindedir. 
 

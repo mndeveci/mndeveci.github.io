@@ -10,56 +10,48 @@ _Generics_, java 1.5 ile Java da yer almaya başlamış, nesneye _Object_ türü
 
 <!--more-->
 
-Örnek olarak vermek gerekirsek, _Vector_ tipini ele alalım. Eğer siz _Vector_'ünüzü; 
+Örnek olarak vermek gerekirsek, `Vector` tipini ele alalım. Eğer siz `Vector`'ünüzü; 
 
-<pre class="prettyprint">Vector myVector = new Vector();</pre>
+```java
+Vector myVector = new Vector();
+```
 
-şeklinde yaratırsanız, size get metodunda _Object_ türünden nesneler dönüp, _set_ metodunda ise _Object_ türünde nesne isteyecektir. Siz her seferinde bu _Vector_'e _String_ nesnesi koysanız bile, her aldığınızda kendiniz _String_ nesnesine _cast_ etmek zorunda kalırsınız. 
+şeklinde yaratırsanız, size get metodunda _Object_ türünden nesneler dönüp, _set_ metodunda ise _Object_ türünde nesne isteyecektir. Siz her seferinde bu `Vector`'e `String` nesnesi koysanız bile, her aldığınızda kendiniz `String` nesnesine _cast_ etmek zorunda kalırsınız. 
 
-![](http://2.bp.blogspot.com/-dA9pyJMc-hE/UDgJGmrsjXI/AAAAAAAAAds/t8nHnBjwtLU/s1600/generics2.png) 
-Ancak siz aynı _Vector_'ünüzü; 
+![]({ site.baseurl }/img/post/generics2.png)
+Ancak siz aynı `Vector`'ünüzü; 
 
-<pre class="prettyprint">Vector <string>myVector = new Vector<string>();</string></string></pre>
+```java
+Vector<String> myVector = new Vector<String>();
+```
 
-şeklinde yaratırsanız, size _get_ metodundan _String_ türü dönecek, _set_ metodunda ise _String_ türünde nesne isteyecektir. Siz her seferinde _get_ ile aldığınız nesneleri _cast_ etmek zorunda kalmayacak ve kodlama sırasında farklı türden bir nesneyi _set_ etmeye ya da ona _get_ etmeye çalışmanız halinde _compile-time_ hata vererek, olası _run-time_ hatalarından kurtaracaktır. 
+şeklinde yaratırsanız, size _get_ metodundan `String` türü dönecek, _set_ metodunda ise `String` türünde nesne isteyecektir. Siz her seferinde _get_ ile aldığınız nesneleri _cast_ etmek zorunda kalmayacak ve kodlama sırasında farklı türden bir nesneyi _set_ etmeye ya da ona _get_ etmeye çalışmanız halinde _compile-time_ hata vererek, olası _run-time_ hatalarından kurtaracaktır. 
 
 ![](http://1.bp.blogspot.com/-8K5Q0gTI4jU/UDgJLP8N7ZI/AAAAAAAAAd0/ehqhBho6BZM/s1600/generics.png) 
-Generic'lerde dikkat edilmesi gereken bir husus, 
+Generic'lerde dikkat edilmesi gereken bir husus, `Vector` bir tür değildir. `Vector<String>.class` mantıksız olacak ve compile-time da hata verecektir. _Generic'ler_ sadece birer belirteç gibi görebilirsiniz. Sizi sadece bazı hatalardan koruyarak, sizin bu hataları yapmanızı engelleyip, arka planda aslında yine _cast_ işlemlerini yaparlar. `Vector` sınıfının kaynak koduna bakarsanız, orada verileri bir Object[] dizisinde tutup, _get_ metodunda da o diziden aldığı _Object_ türündeki nesneyi _generic_ türüne _cast_ etmektedir. Java compiler da siz kodunuzu _binary_ hale dönüştürdüğünüzde, oradaki _generic_ imzalarını verdiğiniz türe çekerek _compile_ eder.
 
-<pre class="prettyprint">Vector</pre>
+Nasıl Vector bir tür değilse; `Vector myVector = new Vector();` şeklinde bir _generic Vector_ tanımlamak, _generic_'siz bir `Vector` tanımlamakla eşdeğerdir. Çünkü soru işareti (?) herhangi bir tür olduğunu belirtir. Ancak _wild card_ şu şekilde kullanırsak;
 
-bir tür değildir. 
+```java
+public void myMethod(Vector<? extends String> paramVector) {
+    // method body
+}
 
-<pre class="prettyprint">Vector<string>.class</string></pre>
 
-mantıksız olacak ve compile-time da hata verecektir. _Generic'ler_ sadece birer belirteç gibi görebilirsiniz. Sizi sadece bazı hatalardan koruyarak, sizin bu hataları yapmanızı engelleyip, arka planda aslında yine _cast_ işlemlerini yaparlar. _Vector_ sınıfının kaynak koduna bakarsanız, orada verileri bir Object[] dizisinde tutup, _get_ metodunda da o diziden aldığı _Object_ türündeki nesneyi _generic_ türüne _cast_ etmektedir. Java compiler da siz kodunuzu _binary_ hale dönüştürdüğünüzde, oradaki _generic_ imzalarını verdiğiniz türe çekerek _compile_ eder. 
+burada da, `String` ve ondan türemiş diğer nesneleri kabul eder şeklinde bir _wild card_ kullanmış oluruz. Yine metod, en az `String` veya `String`'den türemiş bir nesne isteyecektir. _Object_ ya da `String` türünden farklı bir nesne gönderimi _compile-time_ da hata verecektir. 
 
-Nasıl Vector bir tür değilse; 
-
-<pre class="prettyprint">Vector myVector = new Vector();</pre>
-
-şeklinde bir _generic Vector_ tanımlamak, _generic_'siz bir _Vector_ tanımlamakla eşdeğerdir. Çünkü soru işareti (?) herhangi bir tür olduğunu belirtir. Ancak _wild card_ şu şekilde kullanırsak; 
-
-<pre class="prettyprint">public void myMethod(Vector { 
-
-// method body 
-}</pre>
-
-burada da, _String_ ve ondan türemiş diğer nesneleri kabul eder şeklinde bir _wild card_ kullanmış oluruz. Yine metod, en az _String_ veya _String_'den türemiş bir nesne isteyecektir. _Object_ ya da _String_ türünden farklı bir nesne gönderimi _compile-time_ da hata verecektir. 
-
-![](http://3.bp.blogspot.com/-pROt8o042a8/UDgJOydAwYI/AAAAAAAAAd8/OsjLkJZmhP4/s1600/generics_wild.png) 
+![]({site.baseurl}/img/post/generics_wild.png){: .lazyload}
 Sınıfları ve metod parametrelerini _generic_ olarak yazmanın yanı sıra, bir metodun dönüş değerini de _generic_ olarak tanımlayabiliriz. Örnek vermek gerekirse; 
 
-<pre class="prettyprint">public T myMethod(String p_strParam, Class <t>p_typeParam){ 
+```java
+public <T> T myMethod(String p_strParam, Class<T> p_typeParam){
+    return (T) p_strParam;
+}
+```
 
-return (T) p_strParam; 
-}</t></pre>
+myMethod metodu, `T` türünden bir nesne dönmektedir. Nesnenin asıl türünü ise parametre ile gönderilen sınıftan almaktadır. eğer metodu şu şekilde çağrırısak;  `myObj.myMethod("my parameter", String.class);`
 
-myMethod metodu, T türünden bir nesne dönmektedir. Nesnenin asıl türünü ise parametre ile gönderilen sınıftan almaktadır. eğer metodu şu şekilde çağrırısak; 
+içeride "my parameter" ı `String` nesnesine _cast_ edip _return_ edecektir. Ancak burada dikkat edilmesi gereken nokta, bu gibi benzer durumlarda, burada bir `String` nesnesini T nesnese (ki herşey olabilir) _cast_ ediyoruz. Bu da _compile-time_ da _warning_ verecektir. 
 
-<pre class="prettyprint">myObj.myMethod("my parameter", String.class);</pre>
-
-içeride "my parameter" ı _String_ nesnesine _cast_ edip _return_ edecektir. Ancak burada dikkat edilmesi gereken nokta, bu gibi benzer durumlarda, burada bir _String_ nesnesini T nesnese (ki herşey olabilir) _cast_ ediyoruz. Bu da _compile-time_ da _warning_ verecektir. 
-
-[![](http://3.bp.blogspot.com/-6AckKQsjKxM/UDgJTlB3JUI/AAAAAAAAAeE/8jNUpDP0iL8/s320/generic_metod.png)](http://3.bp.blogspot.com/-6AckKQsjKxM/UDgJTlB3JUI/AAAAAAAAAeE/8jNUpDP0iL8/s1600/generic_metod.png) 
+![]({site.baseurl}/img/post/generic_metod.png){: lazyload}
 Sonuç olarak java da _generic_'ler, daha generic (DRY:don't repeat yourself) kodlar yazmanıza olanak sağlıyarak, daha efektif çalışmanıza imkan verecektir.
