@@ -19,8 +19,8 @@ layout: default
     </h1>
 
     {% if page.image.feature %}
-    <div class="post-image-feature" style="background-image: url('{{ imagelink }}'); background-size: cover; background-position-y: center;">
-      <img class="feature-image" id="mnd-post-image" src="{{imagelink}}" alt="{{ page.title }} feature image" style="visibility: hidden">
+    <div class="post-image-feature lazyload" data-bg="{{ imagelink }}" style="background-size: cover; background-position-y: center;">
+      <img class="feature-image lazyload" id="mnd-post-image" src="{{imagelink}}" alt="{{ page.title }} feature image" style="visibility: hidden">
 
       {% if page.image.credit %}
       <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
