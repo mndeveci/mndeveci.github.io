@@ -5,8 +5,9 @@ date: 2012.11.27 13:38:00
 categories: [Programming]
 tags: [java, swing, jtable]
 comments: true
----
-![](http://3.bp.blogspot.com/-AD1heDQ-G6Y/ULTAXsMiJ2I/AAAAAAAAAf4/z_FdY-NJoFY/s1600/url2.png) 
+image: 
+  feature: jtable.png
+--- 
 JTable nesnesindeki tüm hücreleri, içerisindeki veriye göre, kod ile otomatik olarak kolon genişliklerini ayarlamak için; 
 
 <!--more-->
