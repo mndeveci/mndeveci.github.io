@@ -6,7 +6,7 @@ categories: [Programming]
 tags: [java, spring, angularjs, spring-boot, bootstrap, angular-ui-router]
 comments: true
 image: 
-    feature: AngularJS-large.png
+    feature: AngularJS_logo.svg.png
 ---
 Merhaba,
 
