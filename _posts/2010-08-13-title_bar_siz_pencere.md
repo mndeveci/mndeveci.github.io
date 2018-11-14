@@ -74,5 +74,5 @@ public class MyFrame {
 }
 ```
 
-![]({ site.baseurl }/img/post/undecorated.png){: .lazyload}
-![]({ site.baseurl }/img/post/decorated.png){: .lazyload}
+![]({{ site.baseurl }}/img/post/undecorated.png){: .lazyload}
+![]({{ site.baseurl }}/img/post/decorated.png){: .lazyload}

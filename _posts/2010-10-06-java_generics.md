@@ -18,7 +18,7 @@ Vector myVector = new Vector();
 
 şeklinde yaratırsanız, size get metodunda _Object_ türünden nesneler dönüp, _set_ metodunda ise _Object_ türünde nesne isteyecektir. Siz her seferinde bu `Vector`'e `String` nesnesi koysanız bile, her aldığınızda kendiniz `String` nesnesine _cast_ etmek zorunda kalırsınız. 
 
-![]({ site.baseurl }/img/post/generics2.png)
+![]({{ site.baseurl }}/img/post/generics2.png)
 Ancak siz aynı `Vector`'ünüzü; 
 
 ```java
@@ -40,7 +40,7 @@ public void myMethod(Vector<? extends String> paramVector) {
 
 burada da, `String` ve ondan türemiş diğer nesneleri kabul eder şeklinde bir _wild card_ kullanmış oluruz. Yine metod, en az `String` veya `String`'den türemiş bir nesne isteyecektir. _Object_ ya da `String` türünden farklı bir nesne gönderimi _compile-time_ da hata verecektir. 
 
-![]({site.baseurl}/img/post/generics_wild.png){: .lazyload}
+![]({{site.baseurl}}/img/post/generics_wild.png){: .lazyload}
 Sınıfları ve metod parametrelerini _generic_ olarak yazmanın yanı sıra, bir metodun dönüş değerini de _generic_ olarak tanımlayabiliriz. Örnek vermek gerekirse; 
 
 ```java
@@ -53,5 +53,5 @@ myMethod metodu, `T` türünden bir nesne dönmektedir. Nesnenin asıl türünü
 
 içeride "my parameter" ı `String` nesnesine _cast_ edip _return_ edecektir. Ancak burada dikkat edilmesi gereken nokta, bu gibi benzer durumlarda, burada bir `String` nesnesini T nesnese (ki herşey olabilir) _cast_ ediyoruz. Bu da _compile-time_ da _warning_ verecektir. 
 
-![]({site.baseurl}/img/post/generic_metod.png){: lazyload}
+![]({{site.baseurl}}/img/post/generic_metod.png){: lazyload}
 Sonuç olarak java da _generic_'ler, daha generic (DRY:don't repeat yourself) kodlar yazmanıza olanak sağlıyarak, daha efektif çalışmanıza imkan verecektir.

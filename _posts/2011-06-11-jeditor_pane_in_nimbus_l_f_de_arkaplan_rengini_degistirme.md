@@ -6,7 +6,7 @@ categories: [Programming]
 tags: [java, programlama, howto, swing, jeditorpane, nimbus]
 comments: true
 ---
-![]({ site.baseurl }/img/post/editor1.jpg){: .lazyload}
+![]({{ site.baseurl }}/img/post/editor1.jpg){: .lazyload}
 
 Java'da HTML göstermek için kullanılan JEditorPane'e normalde arkaplan değerini verebiliyorsunuz. Ancak _Look&Feel_ olarak Nimbus seçerseniz, arkaplan değeri hep beyaz olarak kalıyor. Bu hatadan kurtulmak için, arka plan rengi transparan verilebilir. 
 
