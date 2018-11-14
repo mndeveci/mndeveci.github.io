@@ -16,7 +16,7 @@ Bu yazımda sonraki yazılarda kullanılmak üzere bir projenin başlangıcını
 
 Projeye başlarken favori editörünüz ya da IDE'nizde bir maven projesi oluşturun. Oluşturduğunuz projenin `pom.xml`dosyasına aşağıdaki satırları yazın.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -61,7 +61,8 @@ Projeye başlarken favori editörünüz ya da IDE'nizde bir maven projesi oluşt
 Burada yazanlarla ilgili olarak;
 
 Aşağıdaki satırlar projenizin, bir başka projeden türediğini belirtir. Spring Boot'un başlangıç üst projesini kullanmaktayız. Bu da hali hazırda `spring-core` kütüphanesini bağımlılık olarak eklemekte ve ek olarak bir kaç adet build plugin'i eklemektedir. Detaylı olarak incelemek isterseniz, `~/.m2/repository/org/springframework/boot/spring-boot-starter-parent/1.3.5.RELEASE/spring-boot-starter-parent-1.3.5.RELEASE.pom` dosyasına göz atabilirsiniz.
-```
+
+```xml
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -125,7 +126,8 @@ Gördüğünüz gibi, hello metotumuz çalıştı ve metot içerisinden dönen d
 Şimdi elimizde basit bir REST servis veren uygulama hazır. Şimdi buna veritabanı ekleyelim.
 
 Geliştirmede kolaylık olması açısından, H2 in memory veritabanı kullanacağız. Bunun için aşağıdaki bağımlılığı `pom.xml` dosyasına ekleyelim. Veritabanına ek olarak JPA katmanı için, yine Spring Boot kütüphanesinden `spring-boot-starter-data-jpa` bağımlılığını ekleyeceğiz.
-```
+
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -138,6 +140,7 @@ Geliştirmede kolaylık olması açısından, H2 in memory veritabanı kullanaca
 ```
 
 Veritabanında saklamak üzere örnek bir `Entity` nesnesi oluşturalım. Bu nesne şehir bilgilerini tutsun ve içerisinde şehir kodu ve adı bilgileri bulunsun. Sınıfımızı da `model` adında bir pakete yerleştirelim.
+
 ```java
 package com.mndeveci.spring.boot.rest.model;
 
@@ -170,16 +173,19 @@ public interface CityRepository extends CrudRepository<City, String> {
 ```
 
 Dikkat ettiyseniz sadece bir Interface yazıp, onu da `CrudRepository` Interface'inden türettim. Bu da Spring Data JPA projesinin bir yeniliği. Siz bir Interface yazıp bu Interface'i burada olduğu gibi `CrudRepository` Interface'inden türettikten sonra, bazı belli başlı veritabanı işlemleri için hazır metotlarınız oluyor. Eğer `CrudRepository` kaynak kodu içerisine giderseniz, listeleme (`findAll`), tek kayıt getirme (`findOne`), kaydetme ve güncelleme (`save`), silme (`delete`) metotlarının tanımlı olduğunu göreceksiniz. Uygulamayı başlattığınızda bu interface'ler üzerinden bu sınıfların "implement" edilmiş halleri uygulama classpath'i üzerinde yer alacaktır. Spring Data JPA, bunların yanı sıra, kendine ait basit bir sorgulama notasyonu da sunmakta. Örneğin;
+
 ```java
 List<City> findByName(String name);
 ```
 metotu yazdığınızda, bu metot veritabanında aşağıdaki sorguyu çalıştırıp size `City` listesi olarak geri döndürecektir.
+
 ```sql
 SELECT * FROM CITY WHERE NAME = :name;
 ```
 Bu ve bütün kullanımları için [bu linki](http://docs.spring.io/spring-data/jpa/docs/1.10.1.RELEASE/reference/html/#repositories.query-methods) inceleyebilirsiniz.
 
 Şimdi örnek olması açısından elimizdeki `City` nesnesini listeleyen bir 'enpoint' yazalım. `WelcomeController` sınıfını açıp `CityRepository` sınıfını 'Autowire' ile bağlayıp, bu sınıftaki listeleme metotunu kullanalım.
+
 ```java
 // ...
     @Autowired

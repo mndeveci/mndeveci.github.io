@@ -8,6 +8,6 @@ comments: true
 ---
 Excel veya benzer bir ortamdan aldığınız statik bir listinize SELECT çalıştırabilmek için;
 
-```language-sql
+```sql
 select column_value from table(sys.odcivarchar2list('18776', '18775'))
 ```

@@ -8,7 +8,7 @@ comments: true
 ---
 Oracle Apex'de PLSQL işlemi sonrasında kullanıcıya mesaj vermek için:
 
-```language-sql
+```sql
 begin  
 	IF :P1_COMPUTER like 'PC%'  THEN  
 		INSERT INTO...;  

@@ -8,6 +8,6 @@ comments: true
 ---
 Oracle Apex'de, bir linkin altına Evet/Hayır sorusu sormak için:
 
-```language-javascript
+```javascript
 javascript:apex.confirm('Sormak istediğiniz soru?', {set:{"ITEM_1":"VAL_1"}});
 ```

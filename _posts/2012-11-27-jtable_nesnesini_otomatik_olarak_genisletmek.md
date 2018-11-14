@@ -12,34 +12,25 @@ JTable nesnesindeki tüm hücreleri, içerisindeki veriye göre, kod ile otomati
 
 <!--more-->
 
-<pre class="prettyprint">public static void autoResizeTable(JTable p_jTable, int p_nColumnIndex) { 
+```java
+public static void autoResizeTable(JTable p_jTable, int p_nColumnIndex) {
+    TableColumn jColumn = p_jTable.getColumnModel().getColumn(p_nColumnIndex);
+    TableCellRenderer jHeaderRenderer = p_jtable.gettableheader().getdefaultrenderer();
+    Component jHEaderComp = jHeaderRenderer.getTableCellRendererComponent(....);
+    int nSize = jHEaderComp.getPrefferedSize().width;
+    Component jCellComponent;
+    TableCellRenderer jCellRenderer;
 
-TableColumn jColumn = p_jTable.getColumnModel().getColumn(p_nColumnIndex); 
+    for(int i = 0; i < p_jTable.getRowCount(); i++) {
+        jCellRenderer = p_jTable.getCellRenderer(i, p_nColumnIndex);
+        jCellComponent = jCellRenderer.getTableCellRendererComponent(...);
+        nSize = Math.max(nSize, (jCellComponent.getPrefferedSize().width);
+    }
 
-TableCellRenderer jHeaderRenderer = p_jtable.gettableheader().getdefaultrenderer(); 
-
-Component jHEaderComp = jHeaderRenderer.getTableCellRendererComponent(....); 
-
-int nSize = jHEaderComp.getPrefferedSize().width; 
-
-Component jCellComponent; 
-
-TableCellRenderer jCellRenderer; 
-
-for(int i = 0; i < p_jTable.getRowCount(); i++) { 
-
-jCellRenderer = p_jTable.getCellRenderer(i, p_nColumnIndex); 
-
-jCellComponent = jCellRenderer.getTableCellRendererComponent(...); 
-
-nSize = Math.max(nSize, (jCellComponent.getPrefferedSize().width); 
-
-} 
-
-jColumn.setPrefferedWidth(nSize); 
-
-jColumn.setWidth(nSize); 
-}</pre>
+    jColumn.setPrefferedWidth(nSize);
+    jColumn.setWidth(nSize);
+}
+```
 
 kod parçacığını kullanabilirsiniz. 
 

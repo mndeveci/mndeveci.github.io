@@ -8,7 +8,7 @@ comments: true
 ---
 Configuration dosyasında aşağıdaki parametreler eklenerek sorun çözülebilir:
 
-```language-javascript
+```javascript
 config.allowedContent = true;
 config.extraAllowedContent = "*(*)";
 ```

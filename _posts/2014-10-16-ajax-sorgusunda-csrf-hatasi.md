@@ -8,7 +8,7 @@ comments: true
 ---
 Spring security ayarlarından csrf'yi etkinleştirdiyseniz ve jQuery ile ajax post request'i yapmaya çalıştığınızda csrf hatası alacaksınız. Hatayı gidermek için `jQuery.ajax()` metodu içine `'headers'` parametresi ile csrf token'ını gönderebilirsiniz.
 
-```language-javascript
+```javascript
 var headersData = {};
 
 var attrVals = {'test1': 'val1'};

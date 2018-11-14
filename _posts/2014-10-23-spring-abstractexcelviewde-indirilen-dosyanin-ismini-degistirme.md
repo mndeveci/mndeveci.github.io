@@ -8,7 +8,7 @@ comments: true
 ---
 Spring'de `AbstractExcelView` ile oluşturduğunuz excel dosyasının adı genelde, url'in son parçası olur, kod ile bir isim vermek için:
 
-```language-java
+```java
 @RequestMapping(value="/excel", method = RequestMethod.POST)
 public ModelAndView getReportExcel(HttpServletResponse response, Model model) {
 	...

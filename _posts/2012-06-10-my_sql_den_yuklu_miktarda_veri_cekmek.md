@@ -5,8 +5,9 @@ date: 2012.06.10 19:53:00
 categories: [Programming]
 tags: [java, fetch_size, jdbc, mysql]
 comments: true
+image:
+    feature: mysql-java-jdbc.jpg
 ---
-![](http://4.bp.blogspot.com/-qKbV0NUHcTA/T9T7QxVwqDI/AAAAAAAAAcg/zeeUXF3Qnj4/s1600/mysql-java-jdbc.jpg) 
 
 Java ile MySql'den çektiğiniz yüklü miktarlarda verilerle çalışırken (30~40 GB) bazı problemler yaşayabiliyorsunuz. Yazdığınız uygulama verileri satır satır çeksede, sonuçta jdbc sürücüsü verileri tüm olarak çekmeye çalışacak, yazdığınız SQL sorgusu, heap hafızasının aşılması sebebiyle exception fırlatıp çıkacaktır. 
 
