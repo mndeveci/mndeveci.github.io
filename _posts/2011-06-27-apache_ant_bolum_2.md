@@ -14,7 +14,7 @@ Bir önceki yazımda belirttiğim üzere, Ant ile proje geliştirme süreçlerin
 
 Ant görevlerini tanımlayacağımız dosya build.xml dosyası olacak. Format olarak standart XML olacak. 
 
-```
+```xml
 <project basedir="." name="myProject">
     <target name="my-target">
         <echo message="Hello World!" />
@@ -26,7 +26,7 @@ Ant görevlerini tanımlayacağımız dosya build.xml dosyası olacak. Format ol
 
 Tanımladığınız hedeflere dependency ekleyebilirsiniz. Bir hedefin gerçekleştirilmesi için diğer bir kaç hedefi gerçekleştirmek gibi. 
 
-```
+```xml
 <target depends="task-2, task-3" name="target-1">
     <echo message="target 1 executed " />
 </target>
@@ -52,7 +52,7 @@ Ant yapısındaki en basit 2 elemanı gözden geçirmiş olduk.
 
 Bu öğelerden bahsederken de ilk ant task (görev) 'ini tanımlamış olduk. Ekrana bir mesaj yazdırmak için, echo task'ini kullanıyoruz. Göstermek istediğimiz mesajı da message parametresi olarak gönderiyoruz. Burada gördüğünüz gibi parametreyi direk tırnak içerisinde karakter seti olarak verdik. Ancak her programlama dilinde olduğu gibi, bu parametreyi değişkenler yardımı ile de sunabilirdik. Değişken tanımlamak için property task'ini kullanıyoruz. 
 
-```
+```xml
 <property name="my.message" value="Hello World!" /> 
 <echo message="${my.message}" /> 
 ```
@@ -63,19 +63,19 @@ Yukarıda verdiğim örnekte de, önce my.message adı altında bir değişken t
 
 * Dosya kopyalamak için; 
 
-```
+```xml
 <copy file="c:/Users/mndeveci/Desktop/tmp/Main.java" todir="c:/Users/mndeveci/Desktop/projcet_sources/Main.java" /> 
 ```
 
 * Dosya taşımak için; 
 
-```
+```xml
 <move file="c:/Users/mndeveci/Desktop/tmp/Main.java" todir=" c:/Users/mndeveci/Desktop/projcet_sources/Main.java" /> 
 ```
 
 * Dosya silmek için; 
 
-```
+```xml
 <delete file="c:/Users/mndeveci/Desktop/tmp/Main.java" /> 
 ```
 
@@ -83,7 +83,7 @@ Dosya işlemlerinde klasör yapısıyla ilgili işler yaparken, ya da bir grup d
 
 * Klasör kopyalamak için; 
 
-```
+```xml
 <copy todir="c:/Users/mndeveci/Desktop/projcet_sources">
     <fielset dir="c:/Users/mndeveci/Desktop/tmp" />
 </copy> 
@@ -91,7 +91,7 @@ Dosya işlemlerinde klasör yapısıyla ilgili işler yaparken, ya da bir grup d
 
 * Klasör taşımak için; 
 
-```
+```xml
 <move todir="c:/Users/mndeveci/Desktop/projcet_sources">
     <fielset dir="c:/Users/mndeveci/Desktop/tmp" />
 </move> 
@@ -99,19 +99,19 @@ Dosya işlemlerinde klasör yapısıyla ilgili işler yaparken, ya da bir grup d
 
 * Klasör silmek için; 
 
-```
+```xml
 <delete dir="c:/Users/mndeveci/Desktop/tmp" /> 
 ```
 
 * Klasör silmek için, boş klasörleri de içermesi için; 
 
-```
+```xml
 <delete dir="c:/Users/mndeveci/Desktop/tmp" includeemptydirs="true" /> 
 ```
 
 * Verdiğimiz dosya gruplarına bazı filitrelemeler de uygulayabiliriz. Örneğin proje klasörü altındaki sadece .java ve .png dosyalarını kopyalamak için; 
 
-```
+```xml
 <copy todir="c:/Users/mndeveci/Desktop/projcet_sources">
     <fielset dir="c:/Users/mndeveci/Desktop/tmp" includes="**/*.java, **/*.png" />
 </copy> 
@@ -119,7 +119,7 @@ Dosya işlemlerinde klasör yapısıyla ilgili işler yaparken, ya da bir grup d
 
 * Klasör yaratmak için; 
 
-```
+```xml
 <mkdir dir="c:/Users/mndeveci/Desktop/tmp_resources" /> 
 ```
 
@@ -127,7 +127,7 @@ Tabi her zaman işlemleriniz lokal makinedeki dosyalar üzerinden işlemeyceksin
 
 Örnek olarak CVS'deki projeyi lokale çekmek için; 
 
-```
+```xml
 <cvs cvsroot=":pserver:USERNAME@SERVER:/PATH/TO/PROJECT">
     <commandline>
         <argument value="checkout" />
@@ -140,7 +140,7 @@ Eğer sistem değişkenlerinde CVS_ROOT tanımlı ise, ilk parametre olan CVS_RO
 
 Yine CVS projenizi tag'lemek isterseniz; 
 
-```
+```xml
 <cvs>
     <commandline>
         <argument value="tag" />
@@ -165,7 +165,7 @@ CVS ile alakalı diğer komut satırı işlemlerini bulabilirsiniz.
 
 Dosyaları derlemek için önce dışarıdan kullandığımız diğer library'leri eklemek gerekli. Bunun için path task'ini kullanacağız; 
 
-```
+```xml
 <path id="my.library.classpath">
     <pathelement location="../../Documents/Libraries/OutLibrary01.jar" />
     <pathelement location="../../Documents/Libraries/OutLibrary02.jar" />
@@ -176,7 +176,7 @@ id özelliğini daha sonra referans gösterirken kullanacağız. Kendi içerisin
 
 Dışarıdan eklediğimiz library'leri de referans olarak eklediğimize göre artık dosyaları derleyebiliriz. Bunun için javac task'ini kullanacağız; 
 
-```
+```xml
 <javac classpathref="my.library.classpath" destdir="classes" srcdir="sources" /> 
 ```
 
@@ -184,13 +184,13 @@ Bu task, 'sources' klasöründeki source dosyalarını alıp, classpathref deği
 
 Eğer ki projenizde örneğin RMI Stub dosyalarını oluşturmak gerekiyorsa (yani RMI sınıflarını rmic ile derlemek gerekiyorsa) ant'de bulunan rmic task'ini kullanabilirsiniz; 
 
-```
+```xml
 <rmic base="CLASS_FILE_PATH" destdir="DESTINATION_DIR" includes="YOUR_CLASS_FILES" /> 
 ```
 
 Derledeğimiz dosyaları jar dosyalarında toparlama için jar task'ini kullanacağız; 
 
-```
+```xml
 <jar destfile="DESTINATION.JAR" manifest="MANIFESTFILE_PATH">
     <fileset dir="CLASSES_FOLDER" includes="com/**" />
     <fileset dir="ANOTEHR_CLASSES_FOLDER" includes="net/java/YourClassName.class" />
@@ -201,7 +201,7 @@ Derlediğimiz dosyalardan istediklerimiz yine fileset'ler tanımlayıp verebilir
 
 Jar dosyalarımızıda oluşturduğumuza göre bu dosyaları sign edebiliriz. Bunun için signjar task'ini kullanacağız; 
 
-```
+```xml
 <signjar keystore="your.keystore.file" tsaurl="http://url.to.sign"> storepass="your.pass" alias="your.alias" jar="jar.file.to.be.signed" /> 
 ```
 
@@ -211,7 +211,7 @@ Bu sayede CVS üzerinde bulunan projenizin yeni versiyon çıkarma işlemini tam
 
 Tabi normal bir proje de burada anlattığım gibi tek satırlık dosya işlemleri ya da tek satırlık derleme işlemleri ile yazmak mümkün değil. Bu yüzden dosyanız bir süre sonra bakım yapılamaz hale gelebilir. Bunun da üstesinden gelmek için birden fazla build.xml dosyaları kullanabilirsiniz. Bunu sağlamak için de improt task'ini kullanabilirsiniz; 
 
-```
+```xml
 <import file="OTHER_BUILD_FILES" /> 
 ```
 
