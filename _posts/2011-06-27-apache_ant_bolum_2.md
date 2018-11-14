@@ -5,8 +5,9 @@ date: 2011.06.27 00:19:00
 categories: [Programming]
 tags: [java, programlama, howto, ant, apache-ant, build, deploy, version-control]
 comments: true
+image:
+    feature: 554px-Apache-Ant-logo.svg.png
 ---
-![]({ site.baseurl }/img/post/554px-Apache-Ant-logo.svg.png)
 
 Bir önceki yazımda belirttiğim üzere, Ant ile proje geliştirme süreçlerinizi iyileştirebilir ve gereksiz bazı prosedürlerden kurtulabilirsiniz. Kurulum için bir önceki okuyabilirsiniz. 
 

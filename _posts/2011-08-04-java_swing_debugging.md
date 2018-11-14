@@ -8,7 +8,6 @@ comments: true
 image:
     feature: boy-on-swing1.jpg
 ---
-![]({{site.baseurl}}/img/post/boy-on-swing1.jpg){: .lazyload}
 
 Swing ile haşır neşir olduysanız - _hele hele fazla bir şekilde_ - bazı zamanlar, bu nasıl oldu şimdi diye düşünmeye başlıyor insan. Örneğin tablo modelini değiştirirsiniz, bir anda focus anlamsız yere gider, ya da focus alan nesne istenen nesne değildir. Bunları tabi normal alışkanlıklar gereği debug edip takip etmek pek mümkün sayılmaz. Milisaniyeler içinde gerçekleşen bir eylemi 10~20 dk debug edip kendinizi JComponent ya da Component içerisinde, kaybolmuş vaziyette bulursunuz bir anda. 
 
