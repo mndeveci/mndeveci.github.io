@@ -36,6 +36,7 @@ Nasıl Vector bir tür değilse; `Vector myVector = new Vector();` şeklinde bir
 public void myMethod(Vector<? extends String> paramVector) {
     // method body
 }
+```
 
 
 burada da, `String` ve ondan türemiş diğer nesneleri kabul eder şeklinde bir _wild card_ kullanmış oluruz. Yine metod, en az `String` veya `String`'den türemiş bir nesne isteyecektir. _Object_ ya da `String` türünden farklı bir nesne gönderimi _compile-time_ da hata verecektir. 
