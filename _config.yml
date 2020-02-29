@@ -15,7 +15,7 @@ excerpt_separator: <!--more-->
 # Jekyll configuration
 ####################################
 #
-timezone:          Europe/Amsterdam
+timezone:          America/Vancouver
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
@@ -40,7 +40,7 @@ owner:
   name: Mehmet Nuri Deveci
   avatar: avatar.png
   job: "Software Enthusiast"
-  bio: "A Java Developer who loves learning new stuff. Working in Amsterdam, Netherlands"
+  bio: "A Java Developer who loves learning new stuff. Working in Vancouver BC, Canada"
   email: #mndeveci@gmail.com
   disqus-shortname:
   twitter: mndeveci #username
